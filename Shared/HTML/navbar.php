@@ -1,3 +1,13 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$base = "http://localhost/EVENT"; 
+
+
+
+
+
 <nav class="navbar">
     <div class="logo">EventSys</div>
     <ul class="nav-links">
@@ -18,3 +28,10 @@
             <?php endif; ?>
 
             <li><a href="../../User/HTML/logout.php" class="btn-logout">Logout (<?php echo $_SESSION['name']; ?>)</a></li>
+
+             <?php else: ?>
+            <li><a href="../../Auth/HTML/login.php">Login</a></li>
+            <li><a href="../../Auth/HTML/register.php">Register</a></li>
+        <?php endif; ?>
+    </ul>
+</nav>
